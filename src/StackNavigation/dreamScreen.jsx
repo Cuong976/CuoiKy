@@ -30,12 +30,12 @@ export default function DreamScreen() {
         return (
             <TouchableOpacity>
                 <View style={{ width: 175, height: 180, borderWidth: 0.2, alignItems: 'center', borderRadius: 10, backgroundColor: '#e9e9e9', marginBottom: 15 }}>
-                    <Image source={{ uri: 'https://i.pinimg.com/564x/ef/c8/67/efc867dee1cddc8b15f98584668dbac9.jpg' }}
+                    <Image source={{ uri: item.item.url }}
                         style={{ width: 100, resizeMode: 'contain', height: 120, }} />
                     <View style={{ width: '85%', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row' }}>
                         <View>
-                            <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{item.productName}</Text>
-                            <Text style={{ fontSize: 15 }}>1000</Text>
+                            <Text style={{ fontSize: 17, fontWeight: 'bold' }}>{item.item.productName}</Text>
+                            <Text style={{ fontSize: 15 }}>{item.item.price}</Text>
                         </View>
                         <TouchableOpacity>
                             <Icons name='heart-outline' size={25} />
@@ -82,7 +82,7 @@ export default function DreamScreen() {
                 </TouchableOpacity>
             </View>
 
-            <View style={{ width: '90%', height: '70%', borderWidth: 1, marginTop: 10, flex: 1, justifyContent: 'space-between' }}>
+            <View style={{ width: '90%', height: '70%', marginTop: 10, flex: 1, justifyContent: 'space-between' }}>
                 {
                     isloading ? <ActivityIndicator size={40} style={{marginTop:200}} /> :
                         <FlatList
